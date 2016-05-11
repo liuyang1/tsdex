@@ -2,7 +2,6 @@
 #define __FILEIN_H_
 
 #include "ts.h"
-extern class GlobalInfo g_Info;
 
 namespace in
 {

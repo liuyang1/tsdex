@@ -149,7 +149,7 @@ void dumpBin(unsigned char *data, int len, int offset)
 {
     // 为了输出不会紊乱,这里和日志输出采用相同的锁
     g_logger.locklog();
-    int linenum = 16;
+    const int linenum = 16, chunknum = 4;
     for (int i = 0; i < len; i++) {
         if (i % linenum == 0) {
             printf("%7d ", i);
@@ -157,6 +157,8 @@ void dumpBin(unsigned char *data, int len, int offset)
         printf(" %02x", *(data + offset + i));
         if (i % linenum == linenum - 1 || i == len - 1) {
             printf("\n");
+        } else if ((i + 1) % chunknum == 0) {
+            printf("  ");
         }
     }
     g_logger.unlocklog();

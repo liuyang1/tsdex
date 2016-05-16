@@ -9,7 +9,7 @@ namespace in
         public:
             const static int MaxLen = TS_PACKET_SIZE;
         private:
-            FILE *fp = NULL;
+            FILE *fp;
             unsigned char tb[MaxLen];
             size_t tblen;
             bool filter();

@@ -12,6 +12,7 @@ DCFLAGS     += #-DUSING_RTC
 #DLDFLAGS	:= $(DLDFLAGS_PASS)
 #CC			:= g++
 CXX			:=	g++
+CXX := ccache $(CXX)
 #release	:= 1
 
 SRCS 		:= $(wildcard *$(FILE_SUFFIX))

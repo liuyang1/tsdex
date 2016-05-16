@@ -1,4 +1,4 @@
-GTEST_DIR     = ../gtest
+GTEST_DIR     = googletest/googletest
 USER_DIR      = .
 SRC_DIR       = ..
 
@@ -6,6 +6,7 @@ INCS		 += -I$(GTEST_DIR)/include -I$(SRC_DIR)
 CXXFLAGS     += -g -Wall -Wextra
 
 CXX				= g++
+CXX := ccache $(CXX)
 
 FILE_SUFFIX   	= cpp
 TEST_SUFFIX		= test
